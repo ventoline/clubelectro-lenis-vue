@@ -1,16 +1,21 @@
 <script setup lang="ts">
-import { useCalendar } from '@/composables/useCalendar'
+import { useCalendar } from "@/composables/useCalendar";
 
-const { events, loading, error } = useCalendar()
+const { events, loading, error } = useCalendar();
 </script>
 
 <template>
   <section class="events-section" id="events" aria-labelledby="events-heading">
-    <div class="section-label reveal" aria-hidden="true">Upcoming</div>
-    <h2 id="events-heading" class="section-title reveal">Events</h2>
+    <div class="section-label reveal" aria-hidden="true">Upcoming events</div>
+    <h2 id="events-heading" class="section-title reveal"></h2>
 
     <!-- Loading -->
-    <div v-if="loading" class="events-state" aria-live="polite" aria-busy="true">
+    <div
+      v-if="loading"
+      class="events-state"
+      aria-live="polite"
+      aria-busy="true"
+    >
       <span class="events-spinner" aria-hidden="true" />
       Loading events…
     </div>
@@ -21,18 +26,20 @@ const { events, loading, error } = useCalendar()
     </div>
 
     <!-- Empty -->
-    <div v-else-if="events.length === 0" class="events-state" aria-live="polite">
+    <div
+      v-else-if="events.length === 0"
+      class="events-state"
+      aria-live="polite"
+    >
       No upcoming events scheduled.
     </div>
 
     <!-- List -->
     <ul v-else class="events-list" role="list" aria-label="Upcoming events">
-      <li
-        v-for="event in events"
-        :key="event.id"
-        class="event-row"
-      >
-        <span class="event-date-label" aria-label="Date">{{ event.dateLabel }} {{ event.timeLabel }}</span>
+      <li v-for="event in events" :key="event.id" class="event-row">
+        <span class="event-date-label" aria-label="Date"
+          >{{ event.dateLabel }} {{ event.timeLabel }}</span
+        >
         <span class="event-title">{{ event.title }}</span>
 
         <a
@@ -44,12 +51,19 @@ const { events, loading, error } = useCalendar()
           :aria-label="`Get tickets for ${event.title}`"
         >
           Tickets
-          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
-            <path d="M7 17L17 7M7 7h10v10"/>
+          <svg
+            width="12"
+            height="12"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2.5"
+            aria-hidden="true"
+          >
+            <path d="M7 17L17 7M7 7h10v10" />
           </svg>
         </a>
         <span v-else class="event-btn event-btn--tba">TBA</span>
-
       </li>
     </ul>
   </section>
@@ -73,7 +87,9 @@ const { events, loading, error } = useCalendar()
   padding: 3rem 0;
 }
 
-.events-error { color: #ff6b6b; }
+.events-error {
+  color: #ff6b6b;
+}
 
 .events-spinner {
   width: 16px;
@@ -84,7 +100,11 @@ const { events, loading, error } = useCalendar()
   animation: spin 0.7s linear infinite;
   flex-shrink: 0;
 }
-@keyframes spin { to { transform: rotate(360deg); } }
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
 
 /* ── List ───────────────────────────────────────────── */
 .events-list {
@@ -104,23 +124,51 @@ const { events, loading, error } = useCalendar()
   animation: rowIn 0.5s ease both;
 }
 
-.event-row:hover { background: rgba(255, 255, 255, 0.02); }
+.event-row:hover {
+  background: rgba(255, 255, 255, 0.02);
+}
 
 /* Stagger each row by 60ms */
-.event-row:nth-child(1)  { animation-delay: 0.05s; }
-.event-row:nth-child(2)  { animation-delay: 0.11s; }
-.event-row:nth-child(3)  { animation-delay: 0.17s; }
-.event-row:nth-child(4)  { animation-delay: 0.23s; }
-.event-row:nth-child(5)  { animation-delay: 0.29s; }
-.event-row:nth-child(6)  { animation-delay: 0.35s; }
-.event-row:nth-child(7)  { animation-delay: 0.41s; }
-.event-row:nth-child(8)  { animation-delay: 0.47s; }
-.event-row:nth-child(9)  { animation-delay: 0.53s; }
-.event-row:nth-child(10) { animation-delay: 0.59s; }
+.event-row:nth-child(1) {
+  animation-delay: 0.05s;
+}
+.event-row:nth-child(2) {
+  animation-delay: 0.11s;
+}
+.event-row:nth-child(3) {
+  animation-delay: 0.17s;
+}
+.event-row:nth-child(4) {
+  animation-delay: 0.23s;
+}
+.event-row:nth-child(5) {
+  animation-delay: 0.29s;
+}
+.event-row:nth-child(6) {
+  animation-delay: 0.35s;
+}
+.event-row:nth-child(7) {
+  animation-delay: 0.41s;
+}
+.event-row:nth-child(8) {
+  animation-delay: 0.47s;
+}
+.event-row:nth-child(9) {
+  animation-delay: 0.53s;
+}
+.event-row:nth-child(10) {
+  animation-delay: 0.59s;
+}
 
 @keyframes rowIn {
-  from { opacity: 0; transform: translateY(12px); }
-  to   { opacity: 1; transform: translateY(0); }
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 /* ── Date ───────────────────────────────────────────── */
@@ -135,7 +183,7 @@ const { events, loading, error } = useCalendar()
 /* ── Title — matches "type" column: accent + monospace ─ */
 .event-title {
   color: var(--accent);
-  font-family: 'SF Mono', 'Fira Code', monospace;
+  font-family: "SF Mono", "Fira Code", monospace;
   font-size: 0.75rem;
   white-space: nowrap;
   overflow: hidden;
@@ -157,7 +205,9 @@ const { events, loading, error } = useCalendar()
   background: var(--accent-dim);
   color: var(--accent);
   border: 1px solid rgba(200, 255, 87, 0.2);
-  transition: background 0.2s, border-color 0.2s;
+  transition:
+    background 0.2s,
+    border-color 0.2s;
   flex-shrink: 0;
 }
 
@@ -174,7 +224,6 @@ const { events, loading, error } = useCalendar()
   pointer-events: none;
 }
 
-
 /* ── Responsive ─────────────────────────────────────── */
 @media (max-width: 640px) {
   .event-row {
@@ -182,8 +231,18 @@ const { events, loading, error } = useCalendar()
     grid-template-rows: auto auto;
     gap: 0.25rem 1rem;
   }
-  .event-date-label { grid-column: 1; grid-row: 1; }
-  .event-title      { grid-column: 1; grid-row: 2; }
-  .event-btn        { grid-column: 2; grid-row: 1 / 3; align-self: center; }
+  .event-date-label {
+    grid-column: 1;
+    grid-row: 1;
+  }
+  .event-title {
+    grid-column: 1;
+    grid-row: 2;
+  }
+  .event-btn {
+    grid-column: 2;
+    grid-row: 1 / 3;
+    align-self: center;
+  }
 }
 </style>

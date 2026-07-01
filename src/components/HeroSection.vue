@@ -4,43 +4,62 @@
 
 <template>
   <section class="hero" id="intro" aria-labelledby="hero-heading">
-    <div class="hero-eyebrow" aria-hidden="true">
-      <div class="hero-eyebrow-dot" />
-      Smooth scroll · Open source · Lightweight · Performant
-    </div>
-
-    <h1 id="hero-heading" class="hero-title">
-      <span class="hero-title-line">How</span>
-      <span class="hero-title-line"><span class="word-smooth">smooth</span></span>
-      <span class="hero-title-line">scroll</span>
-      <span class="hero-title-line">should be</span>
-    </h1>
-
-    <p class="hero-sub">
-      A lightweight, robust, and performant smooth scroll library.
-      Built to standardize scroll experiences across browsers and
-      devices — and make them buttery smooth.
-    </p>
-
-    <div class="hero-ctas">
-      <a href="#usage" class="btn-primary">
-        Get started
-        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
-          <path d="M5 12h14M12 5l7 7-7 7"/>
-        </svg>
-      </a>
-      <a href="#usage" class="btn-secondary">
-        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
-          <path d="M16 18l6-6-6-6M8 6L2 12l6 6"/>
-        </svg>
-        View usage
-      </a>
-    </div>
-
     <div class="hero-scroll-hint" aria-hidden="true">
       <span class="scroll-hint-text">scroll</span>
       <div class="scroll-hint-line" />
     </div>
+    <div class="hero-eyebrow" aria-hidden="true">
+      <div class="hero-eyebrow-dot" />
+      STEM · Arts · Tech · AI
+    </div>
+
+    <h1 id="hero-heading" class="hero-title">
+      <span class="hero-title-line">le club</span>
+      <span class="hero-title-line"
+        ><span class="word-smooth">electro</span></span
+      >
+    </h1>
+
+    <p class="hero-sub">
+      We offer activities for all, kids up to 99 years old. Workshop or courses
+      at the intersection of Arts, Tech and STEM.
+    </p>
+
+    <div class="hero-ctas">
+      <a href="#usage" class="btn-primary">
+        Get in touch
+        <svg
+          width="14"
+          height="14"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2.5"
+          aria-hidden="true"
+        >
+          <path d="M5 12h14M12 5l7 7-7 7" />
+        </svg>
+      </a>
+      <!--a href="#usage" class="btn-secondary">
+        <svg
+          width="14"
+          height="14"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          aria-hidden="true"
+        >
+          <path d="M16 18l6-6-6-6M8 6L2 12l6 6" />
+        </svg>
+        View usage
+      </a -->
+    </div>
+
+    <!-- div class="hero-scroll-hint" aria-hidden="true">
+      <span class="scroll-hint-text">scroll</span>
+      <div class="scroll-hint-line" />
+    </div -->
   </section>
 </template>
 
@@ -61,7 +80,7 @@
   align-items: center;
   gap: 8px;
   background: var(--accent-dim);
-  border: 1px solid rgba(200,255,87,0.2);
+  border: 1px solid rgba(200, 255, 87, 0.2);
   border-radius: 999px;
   padding: 0.3rem 1rem;
   font-size: 0.72rem;
@@ -75,15 +94,23 @@
 }
 
 .hero-eyebrow-dot {
-  width: 6px; height: 6px;
+  width: 6px;
+  height: 6px;
   border-radius: 50%;
   background: var(--accent);
   animation: pulse 2s infinite;
 }
 
 @keyframes pulse {
-  0%, 100% { opacity: 1; transform: scale(1); }
-  50%       { opacity: 0.5; transform: scale(0.85); }
+  0%,
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.5;
+    transform: scale(0.85);
+  }
 }
 
 .hero-title {
@@ -95,8 +122,12 @@
   opacity: 0;
   animation: fadeUp 0.9s 0.35s ease forwards;
 }
-.hero-title-line { display: block; }
-.word-smooth { color: var(--accent); }
+.hero-title-line {
+  display: block;
+}
+.word-smooth {
+  color: var(--accent);
+}
 
 .hero-sub {
   font-size: clamp(1rem, 2.5vw, 1.3rem);
@@ -120,7 +151,7 @@
 
 .hero-scroll-hint {
   position: absolute;
-  bottom: 2.5rem;
+  top: 3.5em;
   left: 50%;
   transform: translateX(-50%);
   display: flex;
@@ -139,17 +170,46 @@
 }
 
 .scroll-hint-line {
-  width: 1px; height: 40px;
+  width: 1px;
+  height: 40px;
   background: linear-gradient(to bottom, var(--text-subtle), transparent);
   animation: scrollLine 2s 1.5s ease infinite;
 }
 
-@keyframes fadeUp  { from { opacity:0; transform: translateY(24px); } to { opacity:1; transform: translateY(0); } }
-@keyframes fadeIn  { from { opacity:0; } to { opacity:1; } }
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
 @keyframes scrollLine {
-  0%   { transform: scaleY(0); transform-origin: top; }
-  50%  { transform: scaleY(1); transform-origin: top; }
-  51%  { transform: scaleY(1); transform-origin: bottom; }
-  100% { transform: scaleY(0); transform-origin: bottom; }
+  0% {
+    transform: scaleY(0);
+    transform-origin: top;
+  }
+  50% {
+    transform: scaleY(1);
+    transform-origin: top;
+  }
+  51% {
+    transform: scaleY(1);
+    transform-origin: bottom;
+  }
+  100% {
+    transform: scaleY(0);
+    transform-origin: bottom;
+  }
 }
 </style>

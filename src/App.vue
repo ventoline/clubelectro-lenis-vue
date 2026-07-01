@@ -21,7 +21,7 @@ import SiteFooter from "@/components/SiteFooter.vue";
 const canvasRef = ref<HTMLCanvasElement | null>(null);
 const progressRef = ref<HTMLElement | null>(null);
 
-useLenis();           // must be first — sets up lenisRef before others subscribe
+useLenis(); // must be first — sets up lenisRef before others subscribe
 useScene(canvasRef);
 useScrollProgress(progressRef);
 useReveal();
@@ -59,13 +59,14 @@ useAnalytics();
 
     <main id="main-content">
       <HeroSection />
-      <EventsSection />
-      <StatsBar />
       <MarqueeStrip />
+      <EventsSection />
       <FeaturesSection />
-      <CodeSection />
-      <OptionsSection />
-      <UsedBySection />
+      <!-- CodeSection /-->
+      <!--OptionsSection / -->
+      <StatsBar />
+
+      <!--UsedBySection /-->
       <CtaSection />
     </main>
 
@@ -92,7 +93,7 @@ useAnalytics();
   pointer-events: none;
   opacity: 0.1; /*.1;*/
   background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
-  background-size: 350px 350px;
+  background-size: 250px 250px;
   animation: grain 0.5s steps(1) infinite;
   will-change: transform;
 }
@@ -173,6 +174,7 @@ useAnalytics();
 @media (prefers-reduced-motion: reduce) {
   #canvas-bg,
   .grain {
-    display: none; }
+    display: none;
+  }
 }
 </style>
