@@ -15,6 +15,7 @@ import CodeSection from "@/components/CodeSection.vue";
 import OptionsSection from "@/components/OptionsSection.vue";
 import UsedBySection from "@/components/UsedBySection.vue";
 import EventsSection from "@/components/EventsSection.vue";
+import MailingList from "@/components/MailingList.vue";
 import CtaSection from "@/components/CtaSection.vue";
 import SiteFooter from "@/components/SiteFooter.vue";
 
@@ -61,6 +62,7 @@ useAnalytics();
       <HeroSection />
       <MarqueeStrip />
       <EventsSection />
+      <MailingList />
       <FeaturesSection />
       <!-- CodeSection /-->
       <!--OptionsSection / -->
@@ -176,5 +178,4 @@ useAnalytics();
   .grain {
     display: none;
   }
-}
-</style>
+}</style>

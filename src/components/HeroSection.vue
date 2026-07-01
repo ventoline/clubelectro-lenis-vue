@@ -121,6 +121,8 @@
   margin-bottom: 2rem;
   opacity: 0;
   animation: fadeUp 0.9s 0.35s ease forwards;
+  user-select: none;
+  -webkit-user-select: none;
 }
 .hero-title-line {
   display: block;
@@ -195,21 +197,9 @@
   }
 }
 @keyframes scrollLine {
-  0% {
-    transform: scaleY(0);
-    transform-origin: top;
-  }
-  50% {
-    transform: scaleY(1);
-    transform-origin: top;
-  }
-  51% {
-    transform: scaleY(1);
-    transform-origin: bottom;
-  }
-  100% {
-    transform: scaleY(0);
-    transform-origin: bottom;
-  }
+  0%   { transform: scaleY(0); transform-origin: top; }
+  50%  { transform: scaleY(1); transform-origin: top; }
+  51%  { transform: scaleY(1); transform-origin: bottom; }
+  100% { transform: scaleY(0); transform-origin: bottom; }
 }
 </style>

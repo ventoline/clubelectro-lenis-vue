@@ -50,9 +50,10 @@ const features: Feature[] = [
       Fun n learn<br />
     </h2>
     <p class="section-body reveal">
-      Applications designed with Kids in mind to learn intuivitely.Free
-      ressources removing barriers to learning, enhancing access to Technologie.
-      Promoting local culture, French, accademic training and STEM.
+      Tools and Applications designed with Kids in mind to learn. Utilities you
+      can use or embed on your own site. intuivitely.Free ressources removing
+      barriers to learning, enhancing access to Technologie. Promoting local
+      culture, French, accademic training and STEM.
     </p>
 
     <div class="why-grid">
