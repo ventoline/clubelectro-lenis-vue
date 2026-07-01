@@ -26,7 +26,7 @@
     </p>
 
     <div class="hero-ctas">
-      <a href="#usage" class="btn-primary">
+      <a href="mailto:leclubelectro@gmail.com" class="btn-primary">
         Get in touch
         <svg
           width="14"

@@ -9,7 +9,7 @@
     </h2>
     <p class="cta-sub reveal">Book a workshop or enquire foor an activity.</p>
     <div class="cta-btns reveal">
-      <a href="#usage" class="btn-primary">
+      <a href="#events" class="btn-primary">
         Come play!
         <svg
           width="14"
@@ -23,7 +23,7 @@
           <path d="M5 12h14M12 5l7 7-7 7" />
         </svg>
       </a>
-      <a href="#options" class="btn-secondary">
+      <a href="mailto:leclubelectro@gmail.com" class="btn-secondary">
         <svg
           width="14"
           height="14"
