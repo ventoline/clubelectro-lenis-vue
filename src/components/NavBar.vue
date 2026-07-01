@@ -6,20 +6,22 @@
   <nav aria-label="Main navigation">
     <a class="nav-logo" href="#" aria-label="Smooth Scroll — home">
       <div class="nav-logo-mark" aria-hidden="true">
-        <svg viewBox="0 0 16 16" fill="none">
+        <svg viewBox="0 0 22 20">
           <path
-            d="M3 8C3 5.24 5.24 3 8 3s5 2.24 5 5-2.24 5-5 5-5-2.24-5-5z"
-            fill="#0a0a0a"
+            d="M13 10V3L4 14h7v7l9-11h-7z"
+            stroke="none"
+            stroke-linecap="round"
+            stroke-linejoin="round"
           />
-          <circle cx="8" cy="8" r="2" fill="#0a0a0a" />
         </svg>
       </div>
       <span class="nav-logo-text">le Club electro</span>
     </a>
     <ul class="nav-links" role="list">
-      <li><a href="#intro">Workshops</a></li>
+      <li><a href="#intro">LCE</a></li>
+      <li><a href="#events">Wokshops</a></li>
       <li><a href="#features">Apps</a></li>
-      <li><a href="#usage">Contact</a></li>
+      <li><a href="#cta">Contact</a></li>
       <!--li><a href="#options">Options</a></li-->
     </ul>
   </nav>

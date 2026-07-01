@@ -1,10 +1,22 @@
 <script setup lang="ts">
 const tags = [
-  'Lightweight','Scroll Sync','WebGL Ready','Parallax',
-  'Accessible','Zero deps','Infinite scroll','Touch support','Horizontal scroll',
-]
+  "Paper circuits",
+  "AI",
+  "Electronics",
+  "Photogrammetry",
+  "Coding",
+  "video game dev",
+  "Lit XMAS cards",
+  "Cyanotypes",
+  "Beat Making",
+  "LittleBits",
+  "CodeBit",
+  "MakeyMakey",
+  "Suminagashi",
+  "Science",
+];
 // Duplicate for seamless loop
-const items = [...tags, ...tags]
+const items = [...tags, ...tags];
 </script>
 
 <template>
@@ -29,11 +41,17 @@ const items = [...tags, ...tags]
   white-space: nowrap;
   animation: marquee 18s linear infinite;
 }
-.marquee-track:hover { animation-play-state: paused; }
+.marquee-track:hover {
+  animation-play-state: paused;
+}
 
 @keyframes marquee {
-  from { transform: translateX(0); }
-  to   { transform: translateX(-50%); }
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
 }
 
 .marquee-item {
@@ -48,5 +66,7 @@ const items = [...tags, ...tags]
   color: var(--text-muted);
   border-right: 1px solid var(--border);
 }
-.marquee-item span { color: var(--accent); }
+.marquee-item span {
+  color: var(--accent);
+}
 </style>
