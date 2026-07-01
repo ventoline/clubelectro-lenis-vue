@@ -4,32 +4,48 @@
 ───────────────────────────────────────────────────────────────────── */
 
 /* ── Reset ─────────────────────────────────────────────────────────── */
-*, *::before, *::after {
-  margin: 0; padding: 0; box-sizing: border-box;
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 /* ── Design tokens ─────────────────────────────────────────────────── */
 :root {
-  --bg:          #0a0a0a;
-  --surface:     #111111;
-  --border:      rgba(255, 255, 255, 0.07);
-  --text:        #f0ede8;
-  --text-muted:  rgba(240, 237, 232, 0.60);
-  --text-subtle: rgba(240, 237, 232, 0.35);
-  --accent:      #c8ff57;
-  --accent-dim:  rgba(200, 255, 87, 0.12);
+  --bg: #0a0a0a;
+  --surface: #111111;
+  --border: rgba(255, 255, 255, 0.07);
+  --text: #46d4f1; /* #f0ede8; */
+  --text-muted: rgba(240, 237, 232, 0.6);
+  --text-subtle: rgba(112, 244, 107, 0.85); /*rgba(240, 237, 232, 0.35);*/
+  --accent: #e83366; /* #c8ff57; */
+  --accent-dim: rgba(
+    247,
+    154,
+    34,
+    0.12
+  ); /* #f29659;  rgba(200, 255, 87, 0.12); */
 }
 
 /* ── Base ──────────────────────────────────────────────────────────── */
 html {
   background: var(--bg);
   color: var(--text);
-  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-family:
+    "Inter",
+    -apple-system,
+    BlinkMacSystemFont,
+    sans-serif;
   font-size: 16px;
   overflow-x: hidden;
 }
 
-body { position: relative; min-height: 100vh; }
+body {
+  position: relative;
+  min-height: 100vh;
+}
 
 /* ── Focus (WCAG 2.4.7) ────────────────────────────────────────────── */
 :focus-visible {
@@ -51,7 +67,9 @@ body { position: relative; min-height: 100vh; }
   border-radius: 10px;
   text-decoration: none;
   letter-spacing: 0.01em;
-  transition: transform 0.2s, box-shadow 0.2s;
+  transition:
+    transform 0.2s,
+    box-shadow 0.2s;
 }
 .btn-primary:hover {
   transform: translateY(-2px);
@@ -70,7 +88,9 @@ body { position: relative; min-height: 100vh; }
   border-radius: 10px;
   text-decoration: none;
   border: 1px solid var(--border);
-  transition: background 0.2s, border-color 0.2s;
+  transition:
+    background 0.2s,
+    border-color 0.2s;
 }
 .btn-secondary:hover {
   background: rgba(255, 255, 255, 0.04);
@@ -81,7 +101,9 @@ body { position: relative; min-height: 100vh; }
 .reveal {
   opacity: 0;
   transform: translateY(32px);
-  transition: opacity 0.8s ease, transform 0.8s ease;
+  transition:
+    opacity 0.8s ease,
+    transform 0.8s ease;
   /* Tell the compositor these properties will animate so it pre-promotes
      the layer — avoids a mid-scroll repaint when the element enters view */
   will-change: opacity, transform;
@@ -105,7 +127,7 @@ body { position: relative; min-height: 100vh; }
   gap: 10px;
 }
 .section-label::before {
-  content: '';
+  content: "";
   display: block;
   width: 24px;
   height: 1px;
@@ -128,22 +150,46 @@ body { position: relative; min-height: 100vh; }
 }
 
 /* ── Code token colours ────────────────────────────────────────────── */
-.token-keyword  { color: #c792ea; }
-.token-string   { color: #c3e88d; }
-.token-comment  { color: #6a8a8a; font-style: italic; }
-.token-fn       { color: #82aaff; }
-.token-var      { color: #f78c6c; }
-.token-num      { color: #f78c6c; }
-.token-prop     { color: #89ddff; }
-.token-punct    { color: rgba(255, 255, 255, 0.5); }
+.token-keyword {
+  color: #c792ea;
+}
+.token-string {
+  color: #c3e88d;
+}
+.token-comment {
+  color: #6a8a8a;
+  font-style: italic;
+}
+.token-fn {
+  color: #82aaff;
+}
+.token-var {
+  color: #f78c6c;
+}
+.token-num {
+  color: #f78c6c;
+}
+.token-prop {
+  color: #89ddff;
+}
+.token-punct {
+  color: rgba(255, 255, 255, 0.5);
+}
 
 /* ── prefers-reduced-motion (WCAG 2.3.3) ──────────────────────────── */
 @media (prefers-reduced-motion: reduce) {
-  *, *::before, *::after {
+  *,
+  *::before,
+  *::after {
     animation-duration: 0.01ms !important;
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
   }
-  html { scroll-behavior: auto; }
-  .reveal { opacity: 1 !important; transform: none !important; }
+  html {
+    scroll-behavior: auto;
+  }
+  .reveal {
+    opacity: 1 !important;
+    transform: none !important;
+  }
 }

@@ -105,13 +105,13 @@ export function useScene(canvasRef: Ref<HTMLCanvasElement | null>) {
 
     /* ── Lighting ──────────────────────────────────────────────────── */
     scene.add(new THREE.AmbientLight(0xffffff, 1.2));
-    const keyLight = new THREE.DirectionalLight(0xc8ff57, 5.0);
+    const keyLight = new THREE.DirectionalLight(0x46d4f1, 5.0);
     keyLight.position.set(4, 5, 3);
     scene.add(keyLight);
     const fillLight = new THREE.DirectionalLight(0x6688ff, 3.0);
     fillLight.position.set(-5, -2, 1);
     scene.add(fillLight);
-    const rimLight = new THREE.DirectionalLight(0xffffff, 2.0);
+    const rimLight = new THREE.DirectionalLight(0xe83366, 2.0);
     rimLight.position.set(0, -3, -3);
     scene.add(rimLight);
 
