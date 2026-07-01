@@ -1,0 +1,149 @@
+/* ─────────────────────────────────────────────────────────────────────
+   main.css  —  global styles only.
+   Component-scoped styles live inside each .vue file.
+───────────────────────────────────────────────────────────────────── */
+
+/* ── Reset ─────────────────────────────────────────────────────────── */
+*, *::before, *::after {
+  margin: 0; padding: 0; box-sizing: border-box;
+}
+
+/* ── Design tokens ─────────────────────────────────────────────────── */
+:root {
+  --bg:          #0a0a0a;
+  --surface:     #111111;
+  --border:      rgba(255, 255, 255, 0.07);
+  --text:        #f0ede8;
+  --text-muted:  rgba(240, 237, 232, 0.60);
+  --text-subtle: rgba(240, 237, 232, 0.35);
+  --accent:      #c8ff57;
+  --accent-dim:  rgba(200, 255, 87, 0.12);
+}
+
+/* ── Base ──────────────────────────────────────────────────────────── */
+html {
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 16px;
+  overflow-x: hidden;
+}
+
+body { position: relative; min-height: 100vh; }
+
+/* ── Focus (WCAG 2.4.7) ────────────────────────────────────────────── */
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+/* ── Shared buttons ────────────────────────────────────────────────── */
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--accent);
+  color: #0a0a0a;
+  font-size: 0.85rem;
+  font-weight: 700;
+  padding: 0.8rem 1.8rem;
+  border-radius: 10px;
+  text-decoration: none;
+  letter-spacing: 0.01em;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 30px rgba(200, 255, 87, 0.3);
+}
+
+.btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: transparent;
+  color: var(--text);
+  font-size: 0.85rem;
+  font-weight: 600;
+  padding: 0.8rem 1.8rem;
+  border-radius: 10px;
+  text-decoration: none;
+  border: 1px solid var(--border);
+  transition: background 0.2s, border-color 0.2s;
+}
+.btn-secondary:hover {
+  background: rgba(255, 255, 255, 0.04);
+  border-color: rgba(255, 255, 255, 0.15);
+}
+
+/* ── Scroll-reveal ─────────────────────────────────────────────────── */
+.reveal {
+  opacity: 0;
+  transform: translateY(32px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+  /* Tell the compositor these properties will animate so it pre-promotes
+     the layer — avoids a mid-scroll repaint when the element enters view */
+  will-change: opacity, transform;
+}
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+  /* Release the hint once the animation is done so we don't hoard GPU memory */
+  will-change: auto;
+}
+
+/* ── Shared section typography ─────────────────────────────────────── */
+.section-label {
+  font-size: 0.7rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--text-subtle);
+  margin-bottom: 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.section-label::before {
+  content: '';
+  display: block;
+  width: 24px;
+  height: 1px;
+  background: var(--text-subtle);
+}
+
+.section-title {
+  font-size: clamp(2rem, 4vw, 3.5rem);
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  line-height: 1.1;
+  margin-bottom: 1.5rem;
+}
+
+.section-body {
+  font-size: 1.05rem;
+  color: var(--text-muted);
+  line-height: 1.7;
+  max-width: 560px;
+}
+
+/* ── Code token colours ────────────────────────────────────────────── */
+.token-keyword  { color: #c792ea; }
+.token-string   { color: #c3e88d; }
+.token-comment  { color: #6a8a8a; font-style: italic; }
+.token-fn       { color: #82aaff; }
+.token-var      { color: #f78c6c; }
+.token-num      { color: #f78c6c; }
+.token-prop     { color: #89ddff; }
+.token-punct    { color: rgba(255, 255, 255, 0.5); }
+
+/* ── prefers-reduced-motion (WCAG 2.3.3) ──────────────────────────── */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+  html { scroll-behavior: auto; }
+  .reveal { opacity: 1 !important; transform: none !important; }
+}
