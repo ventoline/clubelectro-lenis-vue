@@ -8,7 +8,7 @@ interface Feature {
 const features: Feature[] = [
   {
     title: "Menal Math",
-    desc: "Ready, Set, Count! UIless app to train mental calculus, based on speech only, based on several math models to help identify diffculties ",
+    desc: "Ready, Set, Count! UI free intuitive app to train mental calculus, based on speech only, based on several math models to help identify diffculties ",
     icon: '<path d="M12 3v3M12 18v3M4.22 6.22l2.12 2.12M17.66 17.66l2.12 2.12M3 12h3M18 12h3M6.34 17.66l-2.12 2.12M19.78 6.22l-2.12-2.12" stroke="currentColor" stroke-linecap="round"/>',
   },
   {
