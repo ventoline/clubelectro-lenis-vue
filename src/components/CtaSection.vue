@@ -7,7 +7,7 @@
     <h2 id="cta-heading" class="cta-title reveal">
       Plug n <em>Play</em><br />with us!
     </h2>
-    <p class="cta-sub reveal">Book a workshop or enquire foor an activity.</p>
+    <p class="cta-sub reveal">Book a workshop or enquire for an activity.</p>
     <div class="cta-btns reveal">
       <a href="#events" class="btn-primary">
         Come play!
