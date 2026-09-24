@@ -144,7 +144,7 @@ section {
 
 .feature-image {
   width: 100%;
-  max-width: 350px;
+  max-width: 450px;
   object-fit: cover;
   margin-bottom: -3rem;
 }
